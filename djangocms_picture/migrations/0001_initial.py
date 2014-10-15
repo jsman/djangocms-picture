@@ -23,6 +23,7 @@ class Migration(SchemaMigration):
                 ('alt', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
                 ('longdesc', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
                 ('float', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
+                ('is_responsive', self.gf('django.db.models.fields.BooleanField')),
             ))
             db.send_create_signal(u'djangocms_picture', ['Picture'])
 
@@ -92,7 +93,8 @@ class Migration(SchemaMigration):
             'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'longdesc': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'page_link': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Page']", 'null': 'True', 'blank': 'True'}),
-            'url': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
+            'url': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
+            'is_responsive': ('django.db.models.fields.BooleanField', [], {})
         },
         u'sites.site': {
             'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'django_site'"},

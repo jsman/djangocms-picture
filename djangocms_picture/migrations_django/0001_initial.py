@@ -22,6 +22,7 @@ class Migration(migrations.Migration):
                 ('longdesc', models.CharField(help_text='When user hovers above picture, this text will appear in a popup.', blank=True, null=True, max_length=255, verbose_name='long description')),
                 ('float', models.CharField(help_text='Move image left, right or center.', blank=True, max_length=10, choices=[('left', 'left'), ('right', 'right'), ('center', 'center')], verbose_name='side', null=True)),
                 ('page_link', models.ForeignKey(help_text='If present, clicking on image will take user to specified page.', blank=True, verbose_name='page', to='cms.Page', null=True)),
+                ('is_responsive', models.BooleanField(help_text='Add Twitter Bootstrap `img-responsive` css class.', verbose_name='responsive')),
             ],
             options={
                 'abstract': False,
