@@ -55,6 +55,9 @@ class Picture(CMSPlugin):
         _("side"), max_length=10, blank=True, null=True, choices=FLOAT_CHOICES,
         help_text=_("Move image left, right or center."))
 
+    is_responsive = models.BooleanField(_("Responsive"), default=False,
+        help_text=_("Add Twitter Bootstrap `img-responsive` css class."))
+
     def __str__(self):
         if self.alt:
             return self.alt[:40]
