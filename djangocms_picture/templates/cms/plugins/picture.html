@@ -1,5 +1,5 @@
-<span class="plugin_picture{% if picture.float %} align-{{ picture.float }}{% endif %}">
+{% if not picture.is_responsive %}<span class="plugin_picture{% if picture.float %} align-{{ picture.float }}{% endif %}">{% endif %}
 {% if link %}<a href="{{ link }}">{% endif %}
-<img src="{{ picture.image.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %} />
+<img src="{{ picture.image.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %} {% if picture.is_responsive %}class="img-responsive"{% endif %} {% if picture.style %}style="{{ picture.style }}"{% endif %}  />
 {% if link %}</a>{% endif %}
-</span>
+{% if not picture.is_responsive %}</span>{% endif %}

@@ -61,6 +61,9 @@ class Picture(CMSPlugin):
         _("style"), max_length=255, blank=True, null=True, choices=STYLE_CHOICES,
         help_text=_("Select an optional image style."))
 
+    is_responsive = models.BooleanField(_("Responsive"), default=False,
+        help_text=_("Add Twitter Bootstrap `img-responsive` css class."))
+
     def __str__(self):
         if self.alt:
             return self.alt[:40]
